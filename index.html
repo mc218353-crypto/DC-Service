@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Service | Coques Magnétiques Premium</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="announcement-bar">
+    🚚 Livraison rapide à Bamako | 💳 Paiement à la livraison & Orange Money / Wave
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <span>DC</span> SERVICE
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Rechercher votre modèle (ex: iPhone 13, Samsung A15)...">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <a href="https://wa.me/22394125711" target="_blank" rel="noopener noreferrer" class="whatsapp-btn-head">
+      <i class="fa-brands fa-whatsapp"></i> Contact
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Nouveau & Exclusif</span>
+      <h1>Protection 360° Magnétique</h1>
+      <p>Coques en verre trempé double face & cadre en aluminium d'aviation. Élégance et protection maximale pour votre smartphone.</p>
+      <a href="#selector" class="btn-primary">Trouver mon modèle</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=800&q=80" alt="Coque Magnétique DC Service">
+    </div>
+  </section>
+
+  <section id="selector" class="selector-section">
+    <h2>Choisissez la marque de votre téléphone</h2>
+    <div class="brand-grid">
+      <button class="brand-card active" data-brand="all">Toutes les marques</button>
+      <button class="brand-card" data-brand="iphone"><i class="fa-brands fa-apple"></i> iPhone</button>
+      <button class="brand-card" data-brand="samsung">Samsung</button>
+      <button class="brand-card" data-brand="redmi">Redmi / Xiaomi</button>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <h2>Nos Coques Magnétiques</h2>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <section class="features">
+    <div class="feature-item">
+      <i class="fa-solid fa-magnet"></i>
+      <h3>Aimants N45 Forts</h3>
+      <p>Fermeture instantanée et sécurisée</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Verre Anti-Choc</h3>
+      <p>Protection intégrale avant et arrière</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-truck-fast"></i>
+      <h3>Livraison Rapide</h3>
+      <p>Vérifiez avant de payer</p>
+    </div>
+  </section>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Commander <span id="modalProductName"></span></h3>
+      <form id="orderForm">
+        <input type="hidden" id="selectedProduct">
+        <div class="form-group">
+          <label>Votre Nom complet</label>
+          <input type="text" id="clientName" required placeholder="Ex: Amine Jamal">
+        </div>
+        <div class="form-group">
+          <label>Numéro de Téléphone</label>
+          <input type="tel" id="clientPhone" required placeholder="Ex: 70 00 00 00">
+        </div>
+        <div class="form-group">
+          <label>Quartier / Ville de livraison</label>
+          <input type="text" id="clientLocation" required placeholder="Ex: Badalabougou, Bamako">
+        </div>
+        <button type="submit" class="btn-submit">Valider la commande</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
