@@ -8,28 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique Samsung Verte",
             brand: "samsung",
             price: "10000 FCFA",
-            img: "images/samsung-verte.png"
+            img: "samsung-verte.png"
         },
         {
             id: 2,
             name: "Coque Magnétique Samsung Noire",
             brand: "samsung",
             price: "10000 FCFA",
-            img: "images/samsung-noire.png"
+            img: "samsung-noire.png"
         },
         {
             id: 3,
             name: "Coque Samsung S23 Ultra",
             brand: "samsung",
             price: "10000 FCFA",
-            img: "images/samsung-s23-ultra.jpg"
+            img: "samsung-s23-ultra.jpg"
         },
         {
             id: 4,
             name: "Protège-Objectif iPhone",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-protege-objectif.png",
+            img: "iphone-protege-objectif.png",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque iPhone Transparente Deux Faces",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-transparente.png",
+            img: "iphone-transparente.png",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique iPhone Dorée",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-doree.png",
+            img: "iphone-doree.png",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique iPhone Argentée",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-argentee.png",
+            img: "iphone-argentee.png",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique iPhone Noire",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-noire.png",
+            img: "iphone-noire.png",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque iPhone - Modèle 1",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-produit1.jpg",
+            img: "iphone-produit1.jpg",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque iPhone - Modèle 2",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-produit2.jpg",
+            img: "iphone-produit2.jpg",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque iPhone - Modèle 3",
             brand: "iphone",
             price: "10000 FCFA",
-            img: "images/iphone-produit3.jpg",
+            img: "iphone-produit3.jpg",
             compatibility: "Compatible iPhone 11 à 17 Pro Max"
         },
         {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique Redmi",
             brand: "redmi",
             price: "10000 FCFA",
-            img: "images/redmi.jpg"
+            img: "redmi.jpg"
         }
     ];
 
