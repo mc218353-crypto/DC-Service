@@ -5,31 +5,95 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = [
         {
             id: 1,
-            name: "Coque Magnétique iPhone 13 / 14",
-            brand: "iphone",
-            price: "10500 FCFA",
-            img: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=400&q=80"
+            name: "Coque Magnétique Samsung Verte",
+            brand: "samsung",
+            price: "10000 FCFA",
+            img: "images/samsung-verte.png"
         },
         {
             id: 2,
-            name: "Coque Magnétique Samsung A et S",
+            name: "Coque Magnétique Samsung Noire",
             brand: "samsung",
             price: "10000 FCFA",
-            img: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=400&q=80"
+            img: "images/samsung-noire.png"
         },
         {
             id: 3,
-            name: "Coque Magnétique Redmi Note 12",
-            brand: "redmi",
+            name: "Coque Samsung S23 Ultra",
+            brand: "samsung",
             price: "10000 FCFA",
-            img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=400&q=80"
+            img: "images/samsung-s23-ultra.jpg"
         },
         {
             id: 4,
-            name: "Coque Magnétique iPhone 15 Pro",
+            name: "Protège-Objectif iPhone",
             brand: "iphone",
-            price: "11000 FCFA",
-            img: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=400&q=80"
+            price: "10000 FCFA",
+            img: "images/iphone-protege-objectif.png",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 5,
+            name: "Coque iPhone Transparente Deux Faces",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-transparente.png",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 6,
+            name: "Coque Magnétique iPhone Dorée",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-doree.png",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 7,
+            name: "Coque Magnétique iPhone Argentée",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-argentee.png",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 8,
+            name: "Coque Magnétique iPhone Noire",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-noire.png",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 9,
+            name: "Coque iPhone - Modèle 1",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-produit1.jpg",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 10,
+            name: "Coque iPhone - Modèle 2",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-produit2.jpg",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 11,
+            name: "Coque iPhone - Modèle 3",
+            brand: "iphone",
+            price: "10000 FCFA",
+            img: "images/iphone-produit3.jpg",
+            compatibility: "Compatible iPhone 11 à 17 Pro Max"
+        },
+        {
+            id: 12,
+            name: "Coque Magnétique Redmi",
+            brand: "redmi",
+            price: "10000 FCFA",
+            img: "images/redmi.jpg"
         }
     ];
 
@@ -42,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const brandButtons = document.querySelectorAll('.brand-card');
 
     // Numéro WhatsApp DC Service
-    const PHONE_NUMBER = "22300000000";
+    const PHONE_NUMBER = "22394125711";
 
     // Fonction d'affichage des produits
     function renderProducts(items) {
@@ -57,7 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach(product => {
             const waMessage = encodeURIComponent(`Bonjour DC Service, je souhaite commander la ${product.name} à ${product.price}.`);
-            const waLink = `https://wa.me/${22394125711}?text=${waMessage}`;
+            const waLink = `https://wa.me/${PHONE_NUMBER}?text=${waMessage}`;
+            const compatibilityHtml = product.compatibility
+                ? `<p class="product-compat">${product.compatibility}</p>`
+                : '';
 
             const card = document.createElement('div');
             card.className = 'product-card';
@@ -65,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${product.img}" alt="${product.name}">
                 <div>
                   <h3 class="product-title">${product.name}</h3>
+                  ${compatibilityHtml}
                   <p class="product-price">${product.price}</p>
                 </div>
                 <div class="btn-group">
@@ -154,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         `*Lieu de livraison :* ${location}\n` +
                         `------------------------------`;
 
-            window.open(`https://wa.me/${22394125711}?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 
             if (modal) modal.style.display = 'none';
             orderForm.reset();
