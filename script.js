@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Coque Magnétique Samsung Verte",
             brand: "samsung",
             price: "10000 FCFA",
-            img: "samsung-verte.png"
+            img: "samsung verte.png"
         },
         {
             id: 2,
