@@ -1,98 +1,231 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>DC Service | Coques Magnétiques Premium</title>
+  <meta name="description" content="Découvrez les coques magnétiques double face DC Service. 10 000 FCFA, livraison gratuite à Bamako. Commandez sur WhatsApp.">
+  <meta name="theme-color" content="#071426">
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-  <div class="announcement-bar">
-    🚚 Livraison rapide à Bamako | 💳 Paiement à la livraison & Orange Money / Wave
+  <div class="announcement">
+    <i class="fa-solid fa-truck-fast"></i>
+    Livraison gratuite à Bamako
+    <span>•</span>
+    Paiement à la livraison
   </div>
 
   <header class="navbar">
-    <div class="logo">
-      <span>DC</span> SERVICE
-    </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Rechercher votre modèle (ex: iPhone 13, Samsung A15)...">
-      <button><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-    <a href="https://wa.me/22394125711" target="_blank" rel="noopener noreferrer" class="whatsapp-btn-head">
-      <i class="fa-brands fa-whatsapp"></i> Contact
+    <a href="#accueil" class="logo">
+      <span class="logo-mark">DC</span>
+      <span>DC <b>SERVICE</b><small>TECHNOLOGIE & STYLE</small></span>
     </a>
+
+    <nav class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#videos">Démonstration</a>
+      <a href="#produits">Nos produits</a>
+      <a href="#avantages">Avantages</a>
+    </nav>
+
+    <a class="nav-whatsapp" href="https://wa.me/22394125711" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> Nous contacter
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <span class="badge">Nouveau & Exclusif</span>
-      <h1>Protection 360° Magnétique</h1>
-      <p>Coques en verre trempé double face & cadre en aluminium d'aviation. Élégance et protection maximale pour votre smartphone.</p>
-      <a href="#selector" class="btn-primary">Trouver mon modèle</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=800&q=80" alt="Coque Magnétique DC Service">
-    </div>
-  </section>
-
-  <section id="selector" class="selector-section">
-    <h2>Choisissez la marque de votre téléphone</h2>
-    <div class="brand-grid">
-      <button class="brand-card active" data-brand="all">Toutes les marques</button>
-      <button class="brand-card" data-brand="iphone"><i class="fa-brands fa-apple"></i> iPhone</button>
-      <button class="brand-card" data-brand="samsung">Samsung</button>
-      <button class="brand-card" data-brand="redmi">Redmi / Xiaomi</button>
-    </div>
-  </section>
-
-  <section class="products-section">
-    <h2>Nos Coques Magnétiques</h2>
-    <div class="product-grid" id="productGrid"></div>
-  </section>
-
-  <section class="features">
-    <div class="feature-item">
-      <i class="fa-solid fa-magnet"></i>
-      <h3>Aimants N45 Forts</h3>
-      <p>Fermeture instantanée et sécurisée</p>
-    </div>
-    <div class="feature-item">
-      <i class="fa-solid fa-shield-halved"></i>
-      <h3>Verre Anti-Choc</h3>
-      <p>Protection intégrale avant et arrière</p>
-    </div>
-    <div class="feature-item">
-      <i class="fa-solid fa-truck-fast"></i>
-      <h3>Livraison Rapide</h3>
-      <p>Vérifiez avant de payer</p>
-    </div>
-  </section>
-
-  <div class="modal" id="orderModal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h3>Commander <span id="modalProductName"></span></h3>
-      <form id="orderForm">
-        <input type="hidden" id="selectedProduct">
-        <div class="form-group">
-          <label>Votre Nom complet</label>
-          <input type="text" id="clientName" required placeholder="Ex: Amine Jamal">
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          COLLECTION PREMIUM
         </div>
-        <div class="form-group">
-          <label>Numéro de Téléphone</label>
-          <input type="tel" id="clientPhone" required placeholder="Ex: 70 00 00 00">
+
+        <h1>Votre téléphone.<br>
+          <span>Une protection</span><br>
+          exceptionnelle.
+        </h1>
+
+        <p class="hero-description">
+          Découvrez la coque magnétique double face :
+          élégante, pratique et conçue pour protéger
+          votre smartphone au quotidien.
+        </p>
+
+        <div class="hero-price">
+          <strong>10 000</strong>
+          <span>FCFA</span>
         </div>
-        <div class="form-group">
-          <label>Quartier / Ville de livraison</label>
-          <input type="text" id="clientLocation" required placeholder="Ex: Badalabougou, Bamako">
+
+        <p class="delivery-note">
+          <i class="fa-solid fa-circle-check"></i>
+          Livraison gratuite à Bamako
+        </p>
+
+        <div class="hero-actions">
+          <a href="#produits" class="btn btn-primary">
+            Choisir mon modèle <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="https://wa.me/22394125711?text=Bonjour%20DC%20Service%2C%20je%20souhaite%20des%20informations."
+             target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
         </div>
-        <button type="submit" class="btn-submit">Valider la commande</button>
-      </form>
-    </div>
-  </div>
+
+        <div class="trust-line">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <b>Protection double face</b>
+            <small>Un style soigné au quotidien</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="hero-image-frame">
+          <img src="images/iphone-doree.png"
+               alt="Coque magnétique double face DC Service"
+               onerror="this.style.display='none';document.getElementById('heroFallback').style.display='flex';">
+
+          <div id="heroFallback" class="image-fallback">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>DC SERVICE</span>
+            <small>Ajoutez votre photo de produit</small>
+          </div>
+        </div>
+
+        <div class="floating-card">
+          <i class="fa-solid fa-magnet"></i>
+          <span><b>Fermeture magnétique</b><small>Conçue pour votre confort</small></span>
+        </div>
+
+        <div class="hero-number">DC / 01</div>
+      </div>
+    </section>
+
+    <section class="benefits-strip" id="avantages">
+      <div><i class="fa-solid fa-magnet"></i><span>Fermeture magnétique</span></div>
+      <div><i class="fa-solid fa-shield-halved"></i><span>Protection double face</span></div>
+      <div><i class="fa-solid fa-truck-fast"></i><span>Livraison gratuite à Bamako</span></div>
+      <div><i class="fa-solid fa-headset"></i><span>Commande WhatsApp</span></div>
+    </section>
+
+    <section class="section video-section" id="videos">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">VOIR LE PRODUIT</span>
+          <h2>La protection en action.</h2>
+          <p>Découvrez les détails et le design de nos coques magnétiques.</p>
+        </div>
+        <span class="section-count">02 VIDÉOS</span>
+      </div>
+
+      <div class="video-grid">
+        <article class="video-card">
+          <video controls playsinline preload="metadata" poster="images/iphone-noire.png">
+            <source src="videos/presentation.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge cette vidéo.
+          </video>
+          <div class="video-caption">
+            <span>01 / DÉMONSTRATION</span>
+            <h3>Découvrez le design</h3>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <video controls playsinline preload="metadata" poster="images/iphone-doree.png">
+            <source src="videos/demonstration.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge cette vidéo.
+          </video>
+          <div class="video-caption">
+            <span>02 / FONCTIONNALITÉS</span>
+            <h3>Découvrez la protection</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section products-section" id="produits">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">COLLECTION DC SERVICE</span>
+          <h2>Trouvez votre modèle.</h2>
+          <p>Sélectionnez votre marque puis choisissez votre coque.</p>
+        </div>
+        <div class="catalog-price">10 000 <small>FCFA / pièce</small></div>
+      </div>
+
+      <div class="catalog-controls">
+        <div class="brand-filters" aria-label="Filtrer par marque">
+          <button class="filter-btn active" data-brand="all">Tout</button>
+          <button class="filter-btn" data-brand="iphone">iPhone</button>
+          <button class="filter-btn" data-brand="samsung">Samsung</button>
+          <button class="filter-btn" data-brand="redmi">Redmi / Xiaomi</button>
+        </div>
+
+        <label class="search-field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Rechercher un modèle..." aria-label="Rechercher un produit">
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="catalog-footer">
+        <i class="fa-solid fa-circle-info"></i>
+        La disponibilité dépend du modèle de téléphone. Contactez-nous pour confirmer la compatibilité.
+      </div>
+    </section>
+
+    <section class="order-banner">
+      <div>
+        <span class="section-kicker">DC SERVICE · BAMAKO</span>
+        <h2>Prêt à protéger votre téléphone ?</h2>
+        <p>Choisissez votre modèle et passez commande directement sur WhatsApp.</p>
+      </div>
+      <a href="https://wa.me/22394125711?text=Bonjour%20DC%20Service%2C%20je%20veux%20commander%20une%20coque%20magnetique%20a%2010000%20FCFA."
+         class="btn btn-light" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Commander maintenant
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <a href="#accueil" class="logo footer-logo">
+      <span class="logo-mark">DC</span>
+      <span>DC <b>SERVICE</b><small>TECHNOLOGIE & STYLE</small></span>
+    </a>
+
+    <p>La technologie au service de votre style.</p>
+
+    <a href="https://wa.me/22394125711" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> +223 94 12 57 11
+    </a>
+
+    <small>© <span id="currentYear"></span> DC Service. Tous droits réservés.</small>
+  </footer>
+
+  <a class="floating-whatsapp"
+     href="https://wa.me/22394125711?text=Bonjour%20DC%20Service%2C%20je%20souhaite%20commander."
+     target="_blank" rel="noopener noreferrer" aria-label="Commander sur WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="script.js"></script>
 </body>
