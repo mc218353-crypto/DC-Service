@@ -1,234 +1,253 @@
-// Attendre que le DOM soit complètement chargé
-document.addEventListener('DOMContentLoaded', () => {
 
-    // Données des produits DC Service
-    const products = [
-        {
-            id: 1,
-            name: "Coque Magnétique Samsung Verte",
-            brand: "samsung",
-            price: "10000 FCFA",
-            img: "samsung verte.png"
-        },
-        {
-            id: 2,
-            name: "Coque Magnétique Samsung Noire",
-            brand: "samsung",
-            price: "10000 FCFA",
-            img: "samsung-noire.png"
-        },
-        {
-            id: 3,
-            name: "Coque Samsung S23 Ultra",
-            brand: "samsung",
-            price: "10000 FCFA",
-            img: "samsung-s23-ultra.jpg"
-        },
-        {
-            id: 4,
-            name: "Protège-Objectif iPhone",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-protege-objectif.png",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 5,
-            name: "Coque iPhone Transparente Deux Faces",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-transparente.png",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 6,
-            name: "Coque Magnétique iPhone Dorée",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-doree.png",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 7,
-            name: "Coque Magnétique iPhone Argentée",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-argentee.png",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 8,
-            name: "Coque Magnétique iPhone Noire",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-noire.png",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 9,
-            name: "Coque iPhone - Modèle 1",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-produit1.jpg",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 10,
-            name: "Coque iPhone - Modèle 2",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-produit2.jpg",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 11,
-            name: "Coque iPhone - Modèle 3",
-            brand: "iphone",
-            price: "10000 FCFA",
-            img: "iphone-produit3.jpg",
-            compatibility: "Compatible iPhone 11 à 17 Pro Max"
-        },
-        {
-            id: 12,
-            name: "Coque Magnétique Redmi",
-            brand: "redmi",
-            price: "10000 FCFA",
-            img: "redmi.jpg"
-        }
-    ];
+document.addEventListener("DOMContentLoaded", () => {
+  "use strict";
 
-    // Sélection des éléments du DOM
-    const productGrid = document.getElementById('productGrid');
-    const modal = document.getElementById('orderModal');
-    const closeModal = document.querySelector('.close-btn');
-    const searchInput = document.getElementById('searchInput');
-    const orderForm = document.getElementById('orderForm');
-    const brandButtons = document.querySelectorAll('.brand-card');
+  // Numéro WhatsApp DC Service, au format international sans +
+  const PHONE_NUMBER = "22394125711";
+  const PRICE = 10000;
 
-    // Numéro WhatsApp DC Service
-    const PHONE_NUMBER = "22394125711";
-
-    // Fonction d'affichage des produits
-    function renderProducts(items) {
-        if (!productGrid) return;
-
-        productGrid.innerHTML = '';
-
-        if (items.length === 0) {
-            productGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 20px;">Aucun produit trouvé pour ce modèle.</p>';
-            return;
-        }
-
-        items.forEach(product => {
-            const waMessage = encodeURIComponent(`Bonjour DC Service, je souhaite commander la ${product.name} à ${product.price}.`);
-            const waLink = `https://wa.me/${PHONE_NUMBER}?text=${waMessage}`;
-            const compatibilityHtml = product.compatibility
-                ? `<p class="product-compat">${product.compatibility}</p>`
-                : '';
-
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <img src="${product.img}" alt="${product.name}">
-                <div>
-                  <h3 class="product-title">${product.name}</h3>
-                  ${compatibilityHtml}
-                  <p class="product-price">${product.price}</p>
-                </div>
-                <div class="btn-group">
-                  <button class="btn-buy" data-name="${product.name}">Acheter Directement</button>
-                  <a href="${waLink}" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> Via WhatsApp
-                  </a>
-                </div>
-            `;
-
-            // Écouteur d'événement sur le bouton "Acheter Directement"
-            const buyBtn = card.querySelector('.btn-buy');
-            if (buyBtn) {
-                buyBtn.addEventListener('click', () => {
-                    openOrderModal(product.name);
-                });
-            }
-
-            productGrid.appendChild(card);
-        });
+  // Remplace les chemins des images par les noms exacts de tes fichiers.
+  const products = [
+    {
+      id: 1,
+      name: "Coque magnétique Samsung verte",
+      brand: "samsung",
+      image: "images/samsung verte.png",
+      compatibility: "Modèle Samsung à confirmer"
+    },
+    {
+      id: 2,
+      name: "Coque magnétique Samsung noire",
+      brand: "samsung",
+      image: "images/samsung-noire.png",
+      compatibility: "Modèle Samsung à confirmer"
+    },
+    {
+      id: 3,
+      name: "Coque magnétique Samsung S23 Ultra",
+      brand: "samsung",
+      image: "images/samsung-s23-ultra.jpg",
+      compatibility: "Samsung Galaxy S23 Ultra"
+    },
+    {
+      id: 4,
+      name: "Coque magnétique iPhone noire",
+      brand: "iphone",
+      image: "images/iphone-noire.png",
+      compatibility: "iPhone : modèle exact à confirmer"
+    },
+    {
+      id: 5,
+      name: "Coque magnétique iPhone dorée",
+      brand: "iphone",
+      image: "images/iphone-doree.png",
+      compatibility: "iPhone : modèle exact à confirmer"
+    },
+    {
+      id: 6,
+      name: "Coque magnétique iPhone argentée",
+      brand: "iphone",
+      image: "images/iphone-argentee.png",
+      compatibility: "iPhone : modèle exact à confirmer"
+    },
+    {
+      id: 7,
+      name: "Coque magnétique iPhone transparente",
+      brand: "iphone",
+      image: "images/iphone-transparente.png",
+      compatibility: "iPhone : modèle exact à confirmer"
+    },
+    {
+      id: 8,
+      name: "Coque magnétique Redmi",
+      brand: "redmi",
+      image: "images/redmi.jpg",
+      compatibility: "Redmi / Xiaomi : modèle à confirmer"
     }
+  ];
 
-    // Filtrage par marque
-    brandButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            brandButtons.forEach(b => b.classList.remove('active'));
-            button.classList.add('active');
+  const productGrid = document.getElementById("productGrid");
+  const searchInput = document.getElementById("searchInput");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.querySelector(".nav-links");
 
-            const brand = button.getAttribute('data-brand');
-            if (brand === 'all') {
-                renderProducts(products);
-            } else {
-                const filtered = products.filter(p => p.brand === brand);
-                renderProducts(filtered);
-            }
-        });
+  let selectedBrand = "all";
+
+  // Sécurise les textes insérés dans le HTML.
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[char]);
+  }
+
+  function formatPrice(price) {
+    return new Intl.NumberFormat("fr-FR").format(price) + " FCFA";
+  }
+
+  function createWhatsAppLink(product) {
+    const message =
+      `Bonjour DC Service ! Je souhaite commander : ${product.name}.\n` +
+      `Prix : ${formatPrice(PRICE)}.\n` +
+      `Livraison à Bamako : gratuite.\n` +
+      `Mon modèle exact de téléphone est : [à préciser].\n` +
+      `Merci de confirmer la disponibilité.`;
+
+    return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+  }
+
+  function renderProducts() {
+    if (!productGrid) return;
+
+    const query = searchInput
+      ? searchInput.value.trim().toLocaleLowerCase("fr")
+      : "";
+
+    const filteredProducts = products.filter(product => {
+      const matchesBrand =
+        selectedBrand === "all" || product.brand === selectedBrand;
+
+      const searchableText =
+        `${product.name} ${product.brand} ${product.compatibility}`
+          .toLocaleLowerCase("fr");
+
+      return matchesBrand && searchableText.includes(query);
     });
 
-    // Barre de recherche dynamique
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-            renderProducts(filtered);
-        });
+    productGrid.innerHTML = "";
+
+    if (filteredProducts.length === 0) {
+      productGrid.innerHTML = `
+        <div class="no-results">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>Aucun produit trouvé.</p>
+          <p>Contactez-nous sur WhatsApp pour vérifier votre modèle.</p>
+        </div>
+      `;
+      return;
     }
 
-    // Gestion de la boîte modale
-    function openOrderModal(productName) {
-        if (!modal) return;
-        const modalProductName = document.getElementById('modalProductName');
-        const selectedProductInput = document.getElementById('selectedProduct');
+    filteredProducts.forEach(product => {
+      const card = document.createElement("article");
+      card.className = "product-card";
 
-        if (modalProductName) modalProductName.textContent = productName;
-        if (selectedProductInput) selectedProductInput.value = productName;
+      const safeName = escapeHTML(product.name);
+      const safeBrand = escapeHTML(product.brand);
+      const safeCompatibility = escapeHTML(product.compatibility);
+      const safeImage = escapeHTML(product.image);
+      const whatsappLink = createWhatsAppLink(product);
 
-        modal.style.display = 'flex';
-    }
+      card.innerHTML = `
+        <div class="product-image">
+          <img
+            src="${safeImage}"
+            alt="${safeName}"
+            loading="lazy"
+          >
+        </div>
 
-    if (closeModal && modal) {
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+        <div class="product-info">
+          <span class="product-brand">${safeBrand}</span>
+          <h3 class="product-title">${safeName}</h3>
+          <p class="product-compat">${safeCompatibility}</p>
 
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
+          <p class="product-price">
+            ${formatPrice(PRICE)}
+          </p>
 
-    // Soumission du formulaire de commande
-    if (orderForm) {
-        orderForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+          <div class="product-actions">
+            <a
+              class="btn btn-product-wa"
+              href="${whatsappLink}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Commander
+            </a>
 
-            const product = document.getElementById('selectedProduct')?.value || '';
-            const name = document.getElementById('clientName')?.value || '';
-            const phone = document.getElementById('clientPhone')?.value || '';
-            const location = document.getElementById('clientLocation')?.value || '';
+            <a
+              class="btn btn-outline"
+              href="${whatsappLink}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vérifier mon modèle
+            </a>
+          </div>
+        </div>
+      `;
 
-            const msg = `*NOUVELLE COMMANDE DC SERVICE*\n\n` +
-                        `------------------------------\n` +
-                        `*Produit :* ${product}\n` +
-                        `*Nom du client :* ${name}\n` +
-                        `*Téléphone :* ${phone}\n` +
-                        `*Lieu de livraison :* ${location}\n` +
-                        `------------------------------`;
+      const image = card.querySelector("img");
+      const imageContainer = card.querySelector(".product-image");
 
-            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+      image.addEventListener("error", () => {
+        image.remove();
+        imageContainer.classList.add("image-missing");
+        imageContainer.innerHTML =
+          '<i class="fa-solid fa-mobile-screen-button" aria-label="Image indisponible"></i>';
+      }, { once: true });
 
-            if (modal) modal.style.display = 'none';
-            orderForm.reset();
-        });
-    }
+      productGrid.appendChild(card);
+    });
+  }
 
-    // Initialisation au chargement
-    renderProducts(products);
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      selectedBrand = button.dataset.brand || "all";
+
+      filterButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      renderProducts();
+    });
+
+    button.setAttribute(
+      "aria-pressed",
+      String(button.classList.contains("active"))
+    );
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", renderProducts);
+  }
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Fermer le menu" : "Ouvrir le menu"
+      );
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+  }
+
+  const yearElement = document.getElementById("currentYear");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  renderProducts();
 });
