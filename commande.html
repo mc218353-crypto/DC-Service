@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101B35">
+  <meta name="description" content="Passez commande chez DC Service : coordonnées, paiement Orange Money, Wave ou à la livraison. Livraison gratuite à Bamako.">
+  <title>Commande | DC Service</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101B35'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='22' font-weight='bold' fill='%23fff' text-anchor='middle'%3EDC%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261120">
+</head>
+<body>
+  <div class="announce">
+    <div class="wrap">
+      <span><i class="fa-solid fa-truck-fast"></i> <strong>Livraison gratuite</strong> à Bamako</span>
+      <span class="sep">•</span>
+      <span class="announce-secondary">Paiement à la livraison, Orange Money &amp; Wave</span>
+      <span class="sep">•</span>
+      <span class="announce-secondary">Coque double face à <strong>10 000 FCFA</strong></span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="DC Service — Accueil">
+        <span class="brand-mark">DC</span>
+        <span class="brand-text">
+          <strong>DC SERVICE</strong>
+          <small>DIGITAL COMMERCE</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="contact.html">Contact</a>
+        <a href="confiance.html">Livraison</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="boutique.html#recherche" aria-label="Rechercher un produit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a class="icon-btn" href="panier.html" aria-label="Voir le panier">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <a class="btn btn--primary btn--sm header-cta"
+           href="https://wa.me/22394125711?text=Bonjour%20DC%20Service%2C%20je%20souhaite%20commander."
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Commander
+        </a>
+        <button class="burger" id="burger" type="button"
+                aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <a href="panier.html">Panier</a>
+          <span>/</span>
+          <span>Commande</span>
+        </nav>
+        <h1>Finaliser ma commande</h1>
+        <p>Renseignez vos coordonnées, choisissez votre moyen de paiement. Nous vous confirmons la commande sur WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div id="checkoutRoot" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark">DC</span>
+          <span class="brand-text">
+            <strong>DC SERVICE</strong>
+            <small>DIGITAL COMMERCE</small>
+          </span>
+        </a>
+        <p class="footer-tagline">
+          Coques magnétiques double face premium. La protection qui respecte
+          le style de votre téléphone, livrée gratuitement à Bamako.
+        </p>
+      </div>
+
+      <div>
+        <h3>Boutique</h3>
+        <div class="footer-links">
+          <a href="boutique.html">Tous les produits</a>
+          <a href="boutique.html?marque=iphone">iPhone</a>
+          <a href="boutique.html?marque=samsung">Samsung</a>
+          <a href="boutique.html?marque=redmi">Redmi</a>
+          <a href="promotions.html">Promotions</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Informations</h3>
+        <div class="footer-links">
+          <a href="confiance.html#livraison">Livraison &amp; retours</a>
+          <a href="confiance.html#cgv">Conditions de vente</a>
+          <a href="confiance.html#faq">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="panier.html">Mon panier</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-contact">
+          <a href="https://wa.me/22394125711" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> +223 94 12 57 11
+          </a>
+          <span><i class="fa-solid fa-location-dot"></i> Bamako, Mali</span>
+          <span><i class="fa-solid fa-clock"></i> Lun — Sam, 08h00 à 20h00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>© <span data-year>2026</span> DC Service — Digital Commerce. Tous droits réservés.</span>
+      <div class="pay-logos">
+        <span>Orange Money</span>
+        <span>Wave</span>
+        <span>Paiement à la livraison</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float"
+     href="https://wa.me/22394125711?text=Bonjour%20DC%20Service%2C%20j%27ai%20une%20question."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contacter DC Service sur WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/data.js?v=20261120"></script>
+  <script src="assets/js/store.js?v=20261120"></script>
+  <script src="assets/js/main.js?v=20261120"></script>
+  <script src="assets/js/commande.js?v=20261120"></script>
+</body>
+</html>
